@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/alltasks"
+        android:title="ALLTASKS" />
+
+    <item
+        android:id="@+id/registr"
+        android:title="REGISTR" />
+
+    <item
+        android:id="@+id/completed"
+        android:title="@string/completed" />
+
+    <item
+        android:id="@+id/profile"
+        android:title="@string/profile" />
+
+    <item
+        android:id="@+id/today"
+        android:title="@string/today" />
+
+    <item
+        android:id="@+id/favorites"
+        android:title="@string/favorities" />
+</menu>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "308728113994",
+    "project_id": "zadanie-d5a60",
+    "storage_bucket": "zadanie-d5a60.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:308728113994:android:350052190e183674f82fb3",
+        "android_client_info": {
+          "package_name": "com.example.zadanie"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfXSzG5bVOU56JNa9gY_uhlM6uhXoUeaA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
