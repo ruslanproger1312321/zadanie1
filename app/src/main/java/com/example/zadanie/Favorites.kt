@@ -21,7 +21,7 @@ class Favorites : AppCompatActivity() {
         val autorization:Toolbar=findViewById(R.id.toolbar)
         setSupportActionBar(autorization)
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.filters)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
@@ -38,10 +38,7 @@ class Favorites : AppCompatActivity() {
                 val alltasks=Intent(this, AllTasks::class.java)
                 startActivity(alltasks)
             }
-            R.id.authorization-> {
-                val autorization=Intent(this, Registr::class.java)
-                startActivity(autorization)
-            }
+
             R.id.completed-> {
                 val completed=Intent(this, Completed::class.java)
                 startActivity(completed)

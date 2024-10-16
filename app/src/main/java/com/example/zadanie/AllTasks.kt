@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.ImageButton
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -19,13 +20,33 @@ class AllTasks : AppCompatActivity() {
 
         val allTasks=findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(allTasks)
+        val filters=findViewById<ImageButton>(R.id.filters)
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+        val popupMenu=androidx.appcompat.widget.PopupMenu(this,filters)
+        popupMenu.inflate(R.menu.filter)
+        popupMenu.setOnMenuItemClickListener {
+            when(it.itemId){
+                R.id.firstNew->{""}
+                R.id.firstOlder->{""}
+            }
+
+
+        }
+        filters.setOnClickListener{
+            popupMenu.show()
+        }
+
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.filters)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
     }
+
+
+
+
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu,menu)
         return true
@@ -38,10 +59,7 @@ class AllTasks : AppCompatActivity() {
                 val alltasks=Intent(this, AllTasks::class.java)
                 startActivity(alltasks)
             }
-            R.id.authorization-> {
-                val autorization=Intent(this, Registr::class.java)
-                startActivity(autorization)
-            }
+
             R.id.completed-> {
                 val completed=Intent(this, Completed::class.java)
                 startActivity(completed)
